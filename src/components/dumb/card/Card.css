@@ -1,0 +1,22 @@
+.card {
+    width: 95%;
+    margin: 3%;
+    height: fit-content;
+    min-height: 100px;
+    background-color: hsl(0, 0%, 10%);
+    border-radius: 20px;
+}
+
+.card__title {
+    align-self: center;
+}
+
+.card__image {
+    width: 50%;
+    place-self: center;
+}
+
+.info {
+    position: absolute;
+    background-color: red;
+}

@@ -11,3 +11,93 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+p {
+  word-wrap: normal;
+  margin: 5px;
+}
+
+h3 {
+  margin: 2px;
+}
+
+.dark-wrapper {
+  background-color: hsl(0, 0%, 11%);
+  color: hsl(0, 0%, 85%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.dark-header {
+  color:hsl(0, 0%, 15%);
+}
+
+.light-dark-wrapper {
+  background-color: hsl(0, 0%, 13.5%);
+  color: hsl(0, 0%, 70%);
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.light-header {
+  color:hsl(0, 0%, 10%);
+}
+
+.header {
+  position: absolute;
+  font-size: 5rem;
+  left: -0.5rem;
+  top: -1.5rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.flex-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.flex-col {
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.on-top {
+  position: relative;
+  z-index: 1;
+}
+
+.center {
+  align-items: center;
+}
+
+.margin-lr {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.margin-tb {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.border-top {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.border-bottom {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+@media (max-width: 640px) {
+  .flex-row {
+    flex-direction: column;
+  }
+}
