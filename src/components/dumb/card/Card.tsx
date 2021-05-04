@@ -1,53 +1,42 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useEffect} from 'react'
 import './Card.css'
 import '../../../index.css'
 import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
-type Props = {
+type Info = {
+    title: string,
+    desc: string,
     imgSrc: string,
     imgAlt: string,
-    hasPressed: Function
 }
 
-function getWindowDimensions() {
-    const { innerWidth: width, innerHeight: height } = window;
-    return {
-        width,
-        height
-    };
+type Props = {
+    hasPressed: Function,
+    info?: Info
 }
 
-export default function Card({imgSrc, imgAlt, hasPressed}: Props) {
+export default function Card({hasPressed, info}: Props) {
     let root: any = null;
-    const card = useRef<null | HTMLDivElement>(null);
-    const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
 
     useEffect(() => {
         clearAllBodyScrollLocks();
-
-        function handleResize() {
-            setWindowDimensions(getWindowDimensions());
-        }
-      
-        window.addEventListener('resize', handleResize);
-        return () => window.removeEventListener('resize', handleResize);
     }, []);
 
     return (
-        <div ref={card} className='flex-col'>
+        <div className='flex-col'>
             <div className='card flex flex-col'>
-                <img src={imgSrc} alt={imgAlt} className="card__image"/>
-                <h2 className="card__title">Card title</h2>
+                <img src={info?.imgSrc} alt={info?.imgAlt || "Imagine"} className="card__image"/>
+                <h2 className="card__title">{info?.title || "Nume"}</h2>
+                <p className="card__desc">{info?.desc || "Descriere"}</p>
 
                 <div>
-                    <button onClick={() => {
+                    <button type="button" className="custom-button" onClick={() => {
                         root = document.getElementById('root');
-                        hasPressed();
-                        disableBodyScroll(root);
+                        hasPressed(info?.title, info?.desc);
+                        disableBodyScroll(root); 
                     }}>Vezi mai multe</button>
                 </div>
             </div>
         </div>
-        
     )
 }

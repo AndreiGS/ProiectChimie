@@ -9,6 +9,16 @@ type Props = {
 }
 
 export default function Products({hasPressed}: Props) {
+    let prop = {
+        info: {
+            title: 'Titlu',
+            desc: 'Desc',
+            imgAlt: 'Whey',
+            imgSrc: WheyImg
+        },
+        hasPressed: hasPressed
+    }
+
     return (
         <div className="light-dark-wrapper">
             <div className="header light-header">
@@ -17,32 +27,34 @@ export default function Products({hasPressed}: Props) {
             <div className="flex flex-row on-top justify-center">
                 {
                     <Card 
-                        imgAlt='Whey' 
-                        imgSrc={WheyImg}
-                        hasPressed={hasPressed}
+                        hasPressed={prop.hasPressed}
+                        info={prop.info}
                     ></Card>
                 }
                 {
                     <Card 
-                        imgAlt='Whey' 
-                        imgSrc={WheyImg}
-                        hasPressed={hasPressed}
+                        hasPressed={prop.hasPressed}
+                        info={prop.info}
+                    ></Card>
+                }
+                {
+                    <Card
+                        hasPressed={prop.hasPressed}
+                        info={prop.info}
                     ></Card>
                 }
             </div>
             <div className="flex flex-row  justify-center">
                 {
                     <Card 
-                        imgAlt='Whey' 
-                        imgSrc={WheyImg}
-                        hasPressed={hasPressed}
+                        hasPressed={prop.hasPressed}
+                        info={prop.info}
                     ></Card>
                 }
                 {
                     <Card 
-                        imgAlt='Whey' 
-                        imgSrc={WheyImg}
-                        hasPressed={hasPressed}
+                        hasPressed={prop.hasPressed}
+                        info={prop.info}
                     ></Card>
                 }
             </div>

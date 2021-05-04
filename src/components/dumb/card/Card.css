@@ -11,8 +11,13 @@
     align-self: center;
 }
 
+.card__desc {
+    padding: 1rem;
+    word-break: break-all;
+}
+
 .card__image {
-    width: 50%;
+    width: 15rem;
     place-self: center;
 }
 
