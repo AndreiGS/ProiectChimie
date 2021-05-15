@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 code {
@@ -36,7 +37,7 @@ h3 {
 .light-dark-wrapper {
   background-color: hsl(0, 0%, 13.5%);
   color: hsl(0, 0%, 70%);
-  padding: 2rem;
+  padding: 2rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -105,6 +106,19 @@ h3 {
   padding: 0.5rem;
   cursor: pointer;
   font-weight: bold;
+  margin: 0!important;
+}
+
+p {
+  font-size: clamp(0.5rem, 1.2rem, 2rem);
+}
+
+h2 {
+  font-size: clamp(1rem, 1.6rem, 2.5rem);
+}
+
+h3 {
+  font-size: clamp(0.7rem, 1.4rem, 2.2rem);
 }
 
 @media (max-width: 640px) {

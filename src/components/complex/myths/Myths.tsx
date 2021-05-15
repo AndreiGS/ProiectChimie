@@ -1,15 +1,14 @@
 import React from 'react'
-import '../../../index.css'
-import './Q_A.css'
 import Info from '../../../assets/info'
+import '../../../index.css'
 
-function getInfo(): Array<JSX.Element> {
+function getMyths(): Array<JSX.Element> {
     let elements: Array<JSX.Element> = [];
 
-    Info.qa.forEach(qa => elements.push(
-        <div key={qa.title}><div className="flex-col">
-            <h3>{qa.title}</h3>
-            <p>{qa.desc}</p>
+    Info.myths.forEach(myth => elements.push(
+        <div key={myth.title}><div className="flex-col">
+            <h3>{myth.title}</h3>
+            <p>{myth.desc}</p>
         </div>
         <br/></div>
     ));
@@ -17,15 +16,15 @@ function getInfo(): Array<JSX.Element> {
     return elements;
 }
 
-export default function Q_A() {
+export default function Myths() {
     return (
         <div className="dark-wrapper">
             <div className="header dark-header">
-                Q&A
+                Mituri
             </div>
             <div className="flex flex-row on-top">
                 {
-                    getInfo()
+                    getMyths()
                 }
             </div>
         </div>
