@@ -37,31 +37,37 @@ export default function HomePage() {
 
     return (
         <div className="home-page">
-            {
-                <Modal 
-                    hasPressed = {hasPressed} 
-                    changeHasPressed = {() => {
-                        setHasPressed(!hasPressed);
-                    }}
-                    header = {header}
-                    section = {sections}
-                    list = {list}
-                />
-            }
             <Landing />
-            <QA />
-            <Products 
-                hasPressed={(title: string, desc: string, fullDesc: Array<string>, list: Array<string>, image: string) => {
-                    setHasPressed(!hasPressed);
-                    setTitle(title);
-                    setDesc(desc);
-                    setFullDesc(fullDesc)
-                    setList(list)
-                    setImage(image)
-                }}
-            />
-            <Myths/>
-            <Food />
+            <div className="container">
+                <div className="container__landing">
+                    <div className="container__title">Suplimente</div>
+                    <div className="overlay-image"></div>
+                </div>
+                {
+                    <Modal 
+                        hasPressed = {hasPressed} 
+                        changeHasPressed = {() => {
+                            setHasPressed(!hasPressed);
+                        }}
+                        header = {header}
+                        section = {sections}
+                        list = {list}
+                    />
+                }
+                <QA />
+                <Products 
+                    hasPressed={(title: string, desc: string, fullDesc: Array<string>, list: Array<string>, image: string) => {
+                        setHasPressed(!hasPressed);
+                        setTitle(title);
+                        setDesc(desc);
+                        setFullDesc(fullDesc)
+                        setList(list)
+                        setImage(image)
+                    }}
+                />
+                <Myths/>
+                <Food />
+            </div>
         </div>
     )
 }

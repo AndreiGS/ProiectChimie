@@ -26,6 +26,7 @@ export default function Products({hasPressed}: Props) {
             title: el.title,
             desc: desc.substring(0, 255)+"...",
             fullDesc: el.desc,
+            shortDesc: el.shortDesc,
             imgAlt: el.title,
             imgSrc: images[start],
             list: el.list
@@ -48,6 +49,7 @@ export default function Products({hasPressed}: Props) {
             title: el.title,
             desc: desc.substring(0, 255)+"...",
             fullDesc: el.desc,
+            shortDesc: el.shortDesc,
             imgAlt: el.title,
             imgSrc: images[start+1],
             list: el.list

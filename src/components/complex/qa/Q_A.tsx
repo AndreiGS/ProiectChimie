@@ -21,7 +21,7 @@ export default function Q_A() {
     return (
         <div className="dark-wrapper">
             <div className="header dark-header">
-                Q&A
+                Întrebări&Răspunsuri 
             </div>
             <div className="flex flex-row on-top">
                 {

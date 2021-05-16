@@ -7,6 +7,7 @@ type Info = {
     title: string,
     desc: string,
     fullDesc: Array<string>,
+    shortDesc?: string,
     list?: Array<string>,
     imgSrc: string,
     imgAlt?: string,
@@ -34,7 +35,7 @@ export default function Card({hasPressed, info}: Props) {
                 <div>
                     <button type="button" className="custom-button" onClick={() => {
                         root = document.getElementById('root');
-                        hasPressed(info?.title, info?.desc, info?.fullDesc, info?.list, info?.imgSrc);
+                        hasPressed(info?.title, info?.shortDesc, info?.fullDesc, info?.list, info?.imgSrc);
                         disableBodyScroll(root); 
                     }}>Vezi mai multe</button>
                 </div>

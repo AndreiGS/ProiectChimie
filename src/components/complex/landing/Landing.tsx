@@ -6,7 +6,6 @@ export default function Landing() {
     return (
         <div className="landing">
             <img src={Image} alt="Imagine cu sala" className="landing__image"/>
-            <div className="overlay-image"></div>
         </div>
     )
 }

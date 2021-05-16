@@ -5,7 +5,7 @@ import './Modal.css'
 type Header = {
     title: string,
     desc: string,
-    image: string
+    image: string,
 }
 
 type Sections = {
@@ -71,6 +71,7 @@ export default function Modal({hasPressed, changeHasPressed, header, section, li
                             <img src={header?.image} alt="imagine"/>
                             <div className="props">
                                 <h3 className="title">{header?.title || "Nume"}</h3>
+                                <p className="description">{header?.desc || null}</p>
                             </div>
                         </div>
                         <button type="button" className="modal__button custom-button" onClick={() => {
